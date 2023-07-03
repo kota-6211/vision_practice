@@ -1,6 +1,7 @@
 <h2>タイトル</h2>
 <p><%= @list.title %></p>
 <h2>本文</h2>
+<p class="sentiment-score">本文の感情分析スコア[<%= @list.score %>]</p>
 <p><%= @list.body %></p>
 <h2>画像</h2>
 <% if @list.image.attached? %>
