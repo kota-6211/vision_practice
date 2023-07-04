@@ -9,8 +9,8 @@ class TodolistsController < ApplicationController
     @list.score = Language.get_data(list_params[:body])
     if @list.save
       tags.each do |tag|
-        @list.tags.create(name: tag)
-      end 
+        @list.tags.find_or_create_by(name: tag)
+      end
       redirect_to todolist_path(@list.id)
     else
       render :new

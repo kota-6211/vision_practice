@@ -9,7 +9,9 @@
 <% end %>
 <div class="tag-box">
 <% @list.tags.each do |tag| %>
-  <span class="label"><%= tag.name %></span>
+  <%= link_to tags_path(tag) do %>
+    <span class="label"><%= tag.name %></span>
+  <% end %>
 <% end %>
 </div>
 <%= link_to "削除", destroy_todolist_path(@list.id), method: :delete, "data-confirm" => "本当に削除しますか？" %>
