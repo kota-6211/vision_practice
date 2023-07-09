@@ -8,6 +8,7 @@
   <%= image_tag @list.image.variant(resize:'300x300') %>
 <% end %>
 <div class="tag-box">
+<p>AI生成</p>
 <% @list.tags.each do |tag| %>
   <%= link_to tags_path(tag) do %>
     <span class="label"><%= tag.name %></span>
